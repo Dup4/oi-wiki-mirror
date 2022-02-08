@@ -6,4 +6,6 @@
 /site
 /node_modules
 
+mkdocs.yml
+
 yarn-error.log
