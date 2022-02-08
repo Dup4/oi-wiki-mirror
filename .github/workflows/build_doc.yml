@@ -16,7 +16,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
         with:
-          submodules: true
+          submodules: 'recursive'
 
       - name: Set up Python runtime
         uses: actions/setup-python@v1
@@ -39,6 +39,9 @@ jobs:
 
       - name: Build
         run: |
+          cd oi-wiki
+          git ls-files | while read filepath; do touch -d "$(git log -1 --format='@%ct' $filepath)" "$filepath" && echo "Fixed: $filepath"; done
+          cd ..
           cp -a ./oi-wiki/docs docs
           yarn build
 
