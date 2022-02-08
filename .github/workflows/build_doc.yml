@@ -6,6 +6,8 @@ on:
     branches:
       - main
   workflow_dispatch:
+  schedule:
+    - cron: '*/30 * * * *'
 
 jobs:
   build-doc:
@@ -18,6 +20,18 @@ jobs:
         with:
           submodules: 'recursive'
           fetch-depth: 0
+
+      - name: Update Submodule
+        run: |
+          git submodule update --recursive --remote
+
+      - name: Commit
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: 🚀 Update OI-WiKi
+          commit_user_name: 'github-actions[bot]'
+          commit_user_email: 'github-actions[bot]@users.noreply.github.com'
+          commit_author: 'github-actions[bot] <github-actions[bot]@users.noreply.github.com>'
 
       - name: Set up Python runtime
         uses: actions/setup-python@v1
