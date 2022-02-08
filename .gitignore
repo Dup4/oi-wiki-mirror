@@ -3,3 +3,6 @@
 
 /venv
 /site
+/node_modules
+
+yarn-error.log
