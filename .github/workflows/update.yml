@@ -19,7 +19,7 @@ jobs:
 
       - name: Update Submodule
         run: |
-          git submodule update recursive --remote
+          git submodule update --recursive --remote
 
       - name: Commit
         uses: stefanzweifel/git-auto-commit-action@v4
