@@ -22,7 +22,6 @@ jobs:
           git submodule update --remote --merge
 
       - name: Commit
-        if: [[ -n $(git diff --stat) ]]
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: 🚀 Update OI-WiKi
