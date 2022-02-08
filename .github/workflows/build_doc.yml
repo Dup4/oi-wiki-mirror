@@ -39,6 +39,7 @@ jobs:
 
       - name: Build
         run: |
+          cp -a ./oi-wiki/docs docs
           yarn build
 
       - name: Deploy to gh-pages

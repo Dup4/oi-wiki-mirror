@@ -1,6 +1,7 @@
 .DS_Store
 .vscode/
 
+/docs
 /venv
 /site
 /node_modules
