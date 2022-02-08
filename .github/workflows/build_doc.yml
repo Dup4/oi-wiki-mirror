@@ -40,10 +40,10 @@ jobs:
       - name: Build
         run: |
           cd oi-wiki
-          git ls-files | while read filepath; do touch -d "$(git log -1 --format='@%ct' $filepath)" "$filepath" && echo "Fixed: $filepath"; done
-          cd ..
-          cp -a ./oi-wiki/docs docs
+          find * | grep -v '\(docs\)' | xargs rm -rf
+          cp ../mkdocs.yml mkdocs.yml
           yarn build
+          mv site ../site
 
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
