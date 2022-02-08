@@ -38,13 +38,15 @@ jobs:
         run: |
           yarn
 
-      - name: Build
+      - name: Fix mtime
         run: |
           cd oi-wiki
           git ls-files | while read filepath; do touch -d "$(git log -1 --format='@%ct' $filepath)" "$filepath" && echo "Fixed: $filepath"; done
           cd ..
+
+      - name: Build
+        run: |
           yarn build
-          mv site ../site
 
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
