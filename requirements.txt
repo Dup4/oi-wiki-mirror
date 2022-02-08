@@ -1,6 +1,6 @@
 # Direct dependencies
 Pygments == 2.10
-jinja2 == 2.11.1
+jinja2 == 2.11.3
 markdown == 3.3
 mkdocs == 1.2.3
 mkdocs-material == 8.1.10
