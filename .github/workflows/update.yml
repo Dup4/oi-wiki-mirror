@@ -1,0 +1,31 @@
+# yaml-language-server: $schema=https://json-schema.org/draft-07/schema#
+name: Update OI-WiKi
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '*/30 * * * *'
+
+jobs:
+  update:
+    name: Update OI-WiKi Content
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          submodules: 'recursive'
+
+      - name: Update Submodule
+        run: |
+          git submodule update --remote --merge
+
+      - name: Commit
+        if: [[ -n $(git diff --stat) ]]
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: 🚀 Update OI-WiKi
+          commit_user_name: 'github-actions[bot]'
+          commit_user_email: 'github-actions[bot]@users.noreply.github.com'
+          commit_author: 'github-actions[bot] <github-actions[bot]@users.noreply.github.com>'
