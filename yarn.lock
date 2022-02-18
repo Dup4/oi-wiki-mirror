@@ -551,10 +551,10 @@ mj-context-menu@^0.6.1:
   resolved "https://registry.yarnpkg.com/mj-context-menu/-/mj-context-menu-0.6.1.tgz#a043c5282bf7e1cf3821de07b13525ca6f85aa69"
   integrity sha512-7NO5s6n10TIV96d4g2uDpG7ZDpIhMh0QNfGdJw/W47JswFcosz457wqz/b5sAKvl12sxINGFCn80NZHKwxQEXA==
 
-mkdocs-render-math-ssr@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/mkdocs-render-math-ssr/-/mkdocs-render-math-ssr-1.0.4.tgz#99f9054fabb14c5e345d5398e2e8ab3800a1c2d3"
-  integrity sha512-xkbk0krQ8bjxOHGvHa+XyxePwEm+ZnqbH5rhPDZVyfIDnEAxuXJiWgkRH4gYkKHQcc2H6hEQO3tbtSI9pzUASw==
+mkdocs-render-math-ssr@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/mkdocs-render-math-ssr/-/mkdocs-render-math-ssr-1.0.5.tgz#b49a76840e8303c49f24f08b1c7453c89ea77d9d"
+  integrity sha512-O+61jKPl+s13uM8x5AM0jp58A0rBFw8MPJi7vyOmHCURCrMTtznotsbx5g/QNsCt+fgoSVV1I4uGn9mykD7ZDg==
   dependencies:
     bluebird "^3.7.2"
     chalk "^4.1.0"

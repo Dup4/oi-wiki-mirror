@@ -12,6 +12,6 @@
     "license": "MIT",
     "homepage": "https://github.com/Dup4/oi-wiki#readme",
     "dependencies": {
-        "mkdocs-render-math-ssr": "^1.0.4"
+        "mkdocs-render-math-ssr": "^1.0.5"
     }
 }
