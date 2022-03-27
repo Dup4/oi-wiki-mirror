@@ -34,23 +34,27 @@ jobs:
           commit_author: 'github-actions[bot] <github-actions[bot]@users.noreply.github.com>'
 
       - name: Set up Python runtime
-        uses: actions/setup-python@v1
+        uses: actions/setup-python@v3
         with:
           python-version: 3.9
-          architecture: x64
 
       - name: Install Python dependencies
         run: |
-          pip3 install -U -r requirements.txt
+          pip install -r requirements.txt
+
+      - uses: pnpm/action-setup@v2
+        with:
+          version: latest
 
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
           node-version: 16
+          cache: pnpm
 
       - name: Install Node dependencies
         run: |
-          yarn
+          pnpm i
 
       - name: Fix mtime
         run: |
@@ -61,7 +65,7 @@ jobs:
       - name: Build
         run: |
           cp -a ./oi-wiki/docs docs
-          yarn build
+          pnpm build
 
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
