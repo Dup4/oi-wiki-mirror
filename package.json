@@ -1,16 +1,8 @@
 {
-    "name": "oi-wiki",
-    "version": "1.0.0",
-    "description": "OI-Wiki Mirror Site",
+    "private": true,
     "scripts": {
         "build": "bash build.sh"
     },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/Dup4/oi-wiki.git"
-    },
-    "license": "MIT",
-    "homepage": "https://github.com/Dup4/oi-wiki#readme",
     "dependencies": {
         "mkdocs-render-math-ssr": "^1.0.5"
     }
