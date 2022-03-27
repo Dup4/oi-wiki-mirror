@@ -7,18 +7,17 @@ on:
       - main
   workflow_dispatch:
   schedule:
-    - cron: '*/30 * * * *'
+    - cron: "*/30 * * * *"
 
 jobs:
   build-doc:
     name: Build documentation
     runs-on: ubuntu-latest
     steps:
-
       - name: Checkout repository
         uses: actions/checkout@v2
         with:
-          submodules: 'recursive'
+          submodules: "recursive"
           fetch-depth: 0
 
       - name: Update Submodule
@@ -29,9 +28,9 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: 🚀 Update OI-WiKi
-          commit_user_name: 'github-actions[bot]'
-          commit_user_email: 'github-actions[bot]@users.noreply.github.com'
-          commit_author: 'github-actions[bot] <github-actions[bot]@users.noreply.github.com>'
+          commit_user_name: "github-actions[bot]"
+          commit_user_email: "github-actions[bot]@users.noreply.github.com"
+          commit_author: "github-actions[bot] <github-actions[bot]@users.noreply.github.com>"
 
       - name: Set up Python runtime
         uses: actions/setup-python@v3
@@ -64,7 +63,6 @@ jobs:
 
       - name: Build
         run: |
-          cp -a ./oi-wiki/docs docs
           pnpm build
 
       - name: Deploy to gh-pages
@@ -73,6 +71,6 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: site
           force_orphan: true
-          user_name: 'github-actions[bot]'
-          user_email: 'github-actions[bot]@users.noreply.github.com'
+          user_name: "github-actions[bot]"
+          user_email: "github-actions[bot]@users.noreply.github.com"
           commit_message: 🚀 Deploying to gh-pages @ ${{ env.GITHUB_SHA }}

@@ -54,8 +54,8 @@ theme:
         icon: material/weather-sunny
         name: Switch to dark mode
     - media: "(prefers-color-scheme: dark)"
-      scheme: slate
-      primary: cyan
+      scheme: dracula
+      primary: deep purple
       accent: deep purple
       toggle:
         icon: material/weather-night
@@ -69,25 +69,25 @@ theme:
   icon:
     repo: fontawesome/brands/github
 
-
-# Plugins
 plugins:
   - search:
       lang: ja
-  - git-revision-date-localized
+  - git-revision-date-localized:
+      type: date
+      enable_creation_date: true
   - minify:
       minify_html: true
+  - redirects:
+      redirect_maps:
+  - mkdocs-material-extras:
+      enable_mathjax: !ENV [ENABLE_MATHJAX, true]
 
 # Customization
 extra:
+  generator: false
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/Dup4/oi-wiki
-
-extra_css:
-
-extra_javascript:
-  - https://polyfill.io/v3/polyfill.min.js?features=es6
 
 # Extensions
 markdown_extensions:
@@ -103,7 +103,7 @@ markdown_extensions:
   - markdown.extensions.tables:
   - markdown.extensions.toc:
       slugify: !!python/name:pymdownx.slugs.uslugify
-      permalink: true
+      permalink: ""
       toc_depth: 3
   - pymdownx.arithmatex:
   - pymdownx.betterem:
