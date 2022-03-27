@@ -1,7 +1,8 @@
 {
     "private": true,
     "scripts": {
-        "build": "bash build.sh"
+        "build": "bash build.sh",
+        "dev": "bash serve.sh"
     },
     "dependencies": {
         "mkdocs-render-math-ssr": "^1.0.5"
