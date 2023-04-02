@@ -18,6 +18,7 @@
         "mkdocs",
         "nbsp",
         "noopener",
+        "pnpm",
         "progressbar",
         "pymdownx",
         "Roboto",
