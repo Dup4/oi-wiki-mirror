@@ -1,12 +1,12 @@
 {
     "private": true,
-    "packageManager": "pnpm@7.1.7",
+    "packageManager": "pnpm@7.30.5",
     "scripts": {
         "build": "bash build.sh",
         "dev": "bash serve.sh"
     },
     "devDependencies": {
         "mathjax-render-for-mkdocs-material": "^0.0.2",
-        "pnpm": "^7.1.7"
+        "pnpm": "^7.30.5"
     }
 }
